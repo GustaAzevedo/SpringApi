@@ -1,5 +1,6 @@
 package com.gusta.SpringApi.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
@@ -16,7 +17,8 @@ public class Category implements Serializable {
     private Long id;
     private String name;
 
-    @ManyToMany
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
     private Set<Product> products = new HashSet<>();
 
     public Category(){
