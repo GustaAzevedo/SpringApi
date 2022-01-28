@@ -57,8 +57,10 @@ public class UserService {
     }
 
     private void updateData(User entity, User user) {
+        //entity.setId(user.getId());
         entity.setName(user.getName());
         entity.setEmail(user.getEmail());
         entity.setPhone(user.getPhone());
+        //entity.setPassword(user.getPassword());
     }
 }
